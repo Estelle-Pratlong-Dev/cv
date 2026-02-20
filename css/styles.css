@@ -1,0 +1,605 @@
+/***************************************************************
+Styles généraux
+***************************************************************/
+
+body {
+    text-align: center;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    background: #0E0F10;
+}
+
+h2 {
+    margin: 50px auto;
+    font-weight: bolder;
+    font-size: 36px;
+}
+
+h3 {
+    margin: 30px auto;
+    font-weight: bold;
+}
+
+
+
+nav i:hover,
+#about .me i,
+#about .interest i,
+#resume .main i,
+#contact .links div:hover i {
+    color: #00A3E1;
+}
+
+main i {
+    margin-right: 8px;
+}
+
+.links i {
+    margin: auto;
+}
+
+p {
+    font-size: 14px;
+}
+
+.header-page:before,
+.header-page:after,
+h3:before,
+h3:after,
+#resume .item:before,
+#resume .item:after,
+#resume .item:hover h4:before,
+.skill-meter .completed {
+    background: #00A3E1;
+}
+
+/***************************************************************
+Décoration titres
+***************************************************************/
+
+.header-page,
+span.title {
+    position: relative;
+}
+
+.header-page:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: calc(50% + 20px);
+    bottom: -19px;
+}
+
+.header-page:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: calc(50% - 46px);
+    bottom: -19px;
+}
+
+span.title:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -40px;
+    left: 5px;
+    border: 2px solid #00A3E1;
+    border-radius: 50px 50px 0 50px;
+    transform: rotate(135deg);
+}
+
+span.title:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -40px;
+    left: auto;
+    right: 0;
+    border: 2px solid #00A3E1;
+    border-radius: 50px 50px 50px 0;
+    transform: rotate(-135deg);
+}
+
+/***************************************************************
+Décoration sous-titres
+***************************************************************/
+.subtitle {
+    position: relative;
+}
+
+.subtitle:before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: calc(50% - 7px);
+    bottom: -16px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid #00A3E1;
+}
+
+h3:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: calc(50% - 45px);
+    bottom: -10px;
+}
+
+h3:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: calc(50% + 15px);
+    bottom: -10px;
+}
+
+/***************************************************************
+Navbar
+***************************************************************/
+
+nav {
+    width: 7vw;
+    background: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+
+nav i {
+    color: #fff;
+}
+
+
+/***************************************************************
+Pages
+***************************************************************/
+
+#about,
+#resume,
+#portfolio,
+#contact,
+#add-view {
+    background: #0E0F10;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 20px auto;
+    padding-left: 12vw;
+}
+
+article {
+    padding: 30px !important;
+    margin: 30px auto 80px auto;
+    border-radius: 10px;
+    background: #070708;
+    transition: 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+/***************************************************************
+Accueil
+***************************************************************/
+
+header {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('../img/Paysages/gray-bridge-and-trees-814499.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    z-index: 0;
+}
+
+header div {
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 0;
+}
+
+/***************************************************************
+A propos
+***************************************************************/
+#about h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#about h5 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+#about h5 i{
+    color: #00A3E1;
+}
+
+#about img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+#about .me {
+    text-align: left;
+	margin: auto;
+}
+
+/***************** Centre d'interet ***************/
+#about .interest div {
+    border-radius: 10px;
+}
+
+#about .interest p {
+    padding: 15px;
+    background: #0E0F10;
+}
+
+#about .interest p i {
+    font-size: 20px;
+}
+
+/********************* Avis ******************/
+#about .all-view {
+    justify-content: center;
+}
+
+#about .view {
+    background: #0E0F10;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    text-align: left;
+}
+
+/*************** Bouton CV ******************/
+#about .dl-cv a {
+    border: 1px solid #00A3E1;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #fff;
+
+    background-image: linear-gradient(to right, #00A3E1 50%, transparent 50%);
+    background-position: right bottom;
+    background-size: 200% 100%;
+    transition: all 300ms ease;
+}
+
+#about .dl-cv a:hover {
+    background-position: left bottom;
+}
+
+/***************************************************************
+CV
+***************************************************************/
+
+#resume h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#resume .experience,
+#resume .education {
+	min-height: 780px;
+}
+
+/* Ecarter les élements */
+#resume .education .item{
+	margin: 40px auto;
+}
+
+#resume .item {
+    position: relative;
+    text-align: left;
+    margin: 20px auto;
+    padding-top: 5px;
+    padding-left: 40px;
+}
+
+
+/********* Logo Latéral *********/
+#resume .item:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#resume .item:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    top: 21px;
+    left: 0;
+}
+
+#resume .item h4:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 15px;
+    left: -6px;
+    background: #070708;
+    border: 2px solid #00A3E1;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#resume .quality div {
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+#resume .quality p {
+    padding: 15px;
+    background: #0E0F10;
+}
+
+
+/*************************** Compétences *****************************/
+#resume .skills {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#resume .skills .responsive img,
+#resume .skills .springboot img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+#resume .skills i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.skill {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.skill-meter {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  width: fit-content;
+  height: 30px;
+  margin: 10px;
+}
+
+.skill-meter span {
+  width: 6px;
+  border: 2px solid #00A3E1; /* bleu lumineux */
+  background: transparent;
+  display: inline-block;
+}
+
+.skill-meter .level1 {
+	height: 30%;
+}
+.skill-meter .level2 {
+	height: 50%;
+}
+.skill-meter .level3 {
+	height: 70%;
+}
+.skill-meter .level4 {
+	height: 100%;
+}
+
+
+/***************************************************************
+Portfolio
+***************************************************************/
+
+#portfolio div.row {
+    justify-content: center;
+}
+
+#portfolio figure {
+    margin: 20px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#portfolio figure img {
+    max-width: 200px;
+    transition: 0.6s;
+}
+
+#portfolio figcaption {
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#portfolio a {
+    color: #fff !important;
+}
+
+#portfolio figure:hover figcaption {
+    display: flex;
+    background: rgba(0, 161, 225, 0.8);
+}
+
+#portfolio figure:hover img {
+    transform: scale(1.05);
+}
+
+#portfolio .vic {
+    background: #3CC8EB;
+}
+
+#portfolio .vic img {
+    transform: scale(.5);
+}
+
+#portfolio .vic:hover img {
+    transform: scale(.55);
+}
+
+/***************************************************************
+Contact
+***************************************************************/
+
+/**************** Formulaires *********************/
+input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+    color: lightgray;
+}
+
+input {
+    line-height: 50px;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+    background: transparent;
+    border: none;
+    border-bottom: lightgray 1px solid;
+    margin: 30px;
+}
+
+input[type=submit] {
+    padding: 0 20px;
+
+    background-image: linear-gradient(to right, #00A3E1 50%, #0E0F10 50%);
+    background-position: right bottom;
+    background-size: 200% 100%;
+    transition: all 300ms ease;
+}
+
+input[type=submit]:hover {
+    background-position: left bottom;
+
+}
+
+/*********************** Liens ****************************/
+#contact .links {
+    display: flex;
+    justify-content: space-around;
+}
+
+#contact .links i {
+    color: #fff;
+    font-size: 2em;
+}
+
+#contact .links p {
+    margin: 10px;
+}
+
+
+
+/***************************************************************
+MEDIA QUERIES
+***************************************************************/
+
+/* tablettes */
+@media (min-width: 576px) {}
+
+/* pc */
+@media (min-width: 992px) {
+
+    header h1 {
+        font-size: 70px;
+    }
+
+    header div {
+        font-size: 30px;
+    }
+
+    #portfolio figure img {
+        max-width: 300px;
+    }
+}
+
+
+
+/***************************************************************
+Réglages Firefox
+***************************************************************/
+
+@-moz-document url-prefix() {
+
+    span.title:after {
+        top: -24px;
+    }
+
+    span.title:before {
+        top: -24px;
+    }
+}
+
+
+/***************************************************************
+************                                *********************
+************                                *********************
+************     CACHER "DONNER UN AVIS     *********************
+************                                *********************
+************                                *********************
+***************************************************************/
+
+#add-view,
+#add-view_button {
+    display: none;
+}
