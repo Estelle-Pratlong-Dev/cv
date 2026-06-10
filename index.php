@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 require 'verifForm.php';
 require 'add-view.php';
 require 'inc/show-views.php';
@@ -123,9 +127,9 @@ require 'inc/show-views.php';
 				<?php foreach ($views as $views) : ?>
 					<div class="col-md-4">
 					<div class="view">
-						<h4><?= $views['name']; ?></h4>
-						<h5><i class="fas fa-briefcase"></i> <?= $views['function']; ?></h5>
-						<p><?= $views['message']; ?></p>
+						<h4><?= htmlspecialchars($views['name'],    ENT_QUOTES, 'UTF-8') ?></h4>
+						<h5><i class="fas fa-briefcase"></i> <?= htmlspecialchars($views['function'], ENT_QUOTES, 'UTF-8') ?></h5>
+						<p><?= htmlspecialchars($views['message'], ENT_QUOTES, 'UTF-8') ?></p>
 					</div>
 					</div>
 				<?php endforeach; ?>
@@ -221,7 +225,7 @@ require 'inc/show-views.php';
                                 <div class="main">
                                     <h4>Diplôme équestre - Galop 5</h4>
                                     <p><i class="fas fa-school"></i> CE de Lansac (13)<br>
-                                        <i class="fas fa-calendar-alt"></i> 2011<p>
+                                        <i class="fas fa-calendar-alt"></i> 2011</p>
                                 </div>
                             </div>
                         </article>
@@ -458,6 +462,7 @@ require 'inc/show-views.php';
                         <textarea name="contact_message" id="message" cols="10" rows="5" class="col" placeholder="Votre message" required></textarea>
                     </div>
                     <input type="hidden" name="action" value="contact-form">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="submit" value="Envoyer">
                 </form>
             </article>
@@ -505,6 +510,7 @@ require 'inc/show-views.php';
                     </div>
 
                     <input type="hidden" name="action" value="view-form">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="submit" value="Envoyer">
                 </form>
             </article>

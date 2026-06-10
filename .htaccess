@@ -1,0 +1,33 @@
+# Désactiver l'affichage du contenu des dossiers
+Options -Indexes
+
+# Headers de sécurité
+<IfModule mod_headers.c>
+    # Empêche le chargement dans une iframe (clickjacking)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Empêche le navigateur de deviner le type MIME
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Active la protection XSS du navigateur
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Ne transmet pas le referrer vers d'autres domaines
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Politique de sécurité du contenu (CSP)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data:;"
+</IfModule>
+
+# Forcer HTTPS (décommenter en production)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# Bloquer l'accès direct aux fichiers sensibles
+<FilesMatch "^(config\.php|composer\.(json|lock)|\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

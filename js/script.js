@@ -63,7 +63,7 @@ $(document).ready(function () {
 
         $.post('verifForm.php', form.serialize(), function (json) {
 
-            if (json.status == 'success') {
+            if (json.status === 'success') {
                 $('#contact').show();
 
                 Swal.fire({
@@ -76,11 +76,14 @@ $(document).ready(function () {
 
                 $('#msg').html('<div style="color:green">' + json.message + '</div>');
 
-            } else if (json.status == 'error') {
+            } else if (json.status === 'error') {
                 $('#contact').show();
                 $('#msg').html('<div style="color:red">' + json.message + '</div>');
-            };
+            }
 
+        }).fail(function () {
+            $('#contact').show();
+            $('#msg').html('<div style="color:red">Une erreur est survenue, veuillez réessayer.</div>');
         });
     });
 
@@ -93,7 +96,7 @@ $(document).ready(function () {
 
         $.post('add-view.php', form.serialize(), function (json) {
 
-            if (json.status == 'add') {
+            if (json.status === 'add') {
                 $('#add-view').show();
 
                 Swal.fire({
@@ -106,11 +109,14 @@ $(document).ready(function () {
 
                 $('#msg-view').html('<div style="color:green">' + json.message + '</div>');
 
-            } else if (json.status == 'view_error') {
+            } else if (json.status === 'view_error') {
                 $('#add-view').show();
                 $('#msg-view').html('<div style="color:red">' + json.message + '</div>');
-            };
+            }
 
+        }).fail(function () {
+            $('#add-view').show();
+            $('#msg-view').html('<div style="color:red">Une erreur est survenue, veuillez réessayer.</div>');
         });
     });
 
