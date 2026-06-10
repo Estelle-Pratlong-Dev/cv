@@ -59,16 +59,16 @@ require 'inc/show-views.php';
 			<article class="container">
 				<div class="row">
 				<figure class="col-md-4">
-					<img src="img/Estelle.jpg" alt="Photo">
+					<img src="img/Estelle.jpg" alt="Photo d'Estelle PRATLONG">
 				</figure>
 				<div class="col-md-8">
 					<div class="me">
 					<h4>Estelle PRATLONG</h4>
 					<p><i class="fas fa-map-marked-alt"></i> Gagnières (30) <br><br>
 						Autodidacte passionnée d’informatique depuis toujours, j’ai naturellement choisi de formaliser mon parcours par une formation de développeuse web, afin d’approfondir et d’enrichir mes compétences techniques.
-						<br>						
+						<br><br>
 						Aujourd’hui titulaire du titre professionnel Développeur Web et Web Mobile, j’ai développé une solide expérience en développement web et SaaS, en participant à des projets concrets et exigeants.
-						<br>
+						<br><br>
 						Toujours curieuse et engagée, je cherche constamment à acquérir de nouvelles compétences et à relever des défis stimulants qui me permettent de faire évoluer mon savoir-faire et d’apporter une vraie valeur ajoutée aux projets auxquels je participe.
 					</p>
 					</div>
@@ -334,7 +334,7 @@ require 'inc/show-views.php';
 						</div>
                     </div>
                     <div class="col-md-3 skill responsive">
-                        <h4><img src="img/phone-laptop.png" alt=""> Responsive Design</h4>
+                        <h4><img src="img/phone-laptop.png" alt="Icône responsive"> Responsive Design</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
 							<span class="level1 completed"></span>
 							<span class="level2 completed"></span>
@@ -362,7 +362,7 @@ require 'inc/show-views.php';
 						</div>
                     </div>
 					<div class="col-md-3 skill">
-                        <h4><img src="img/Talend.png" alt=""> Talend Open Studio</h4>
+                        <h4><img src="img/Talend.png" alt="Logo Talend"> Talend Open Studio</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Confirmé">
 							<span class="level1 completed"></span>
 							<span class="level2 completed"></span>
@@ -372,7 +372,7 @@ require 'inc/show-views.php';
                     </div>
 					
 					<div class="col-md-3 skill springboot">
-                        <h4><img src="img/springboot.png" alt=""> Spring Boot</h4>
+                        <h4><img src="img/springboot.png" alt="Logo Spring Boot"> Spring Boot</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Débutant">
 							<span class="level1 completed"></span>
 							<span class="level2"></span>
@@ -521,7 +521,7 @@ require 'inc/show-views.php';
 
 
     <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- script alert "Mail send"-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	<!-- Bootstrap -->

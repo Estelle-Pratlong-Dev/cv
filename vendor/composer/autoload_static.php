@@ -7,37 +7,57 @@ namespace Composer\Autoload;
 class ComposerStaticInitb9192972a083c45f077aafdffaf9c265
 {
     public static $files = array (
+        '2df68f9e79c919e2d88506611769ed2e' => __DIR__ . '/..' . '/respect/stringifier/src/stringify.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
         ),
-        'R' => 
+        'R' =>
         array (
             'Respect\\Validation\\' => 19,
+            'Respect\\Stringifier\\Test\\Unit\\' => 30,
+            'Respect\\Stringifier\\Test\\' => 25,
+            'Respect\\Stringifier\\' => 20,
         ),
-        'P' => 
+        'P' =>
         array (
             'PHPMailer\\PHPMailer\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Respect\\Validation\\' => 
+        'Respect\\Validation\\' =>
         array (
             0 => __DIR__ . '/..' . '/respect/validation/library',
         ),
-        'PHPMailer\\PHPMailer\\' => 
+        'Respect\\Stringifier\\Test\\Unit\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/tests/unit',
+        ),
+        'Respect\\Stringifier\\Test\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/tests/src',
+        ),
+        'Respect\\Stringifier\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/src',
+        ),
+        'PHPMailer\\PHPMailer\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -45,6 +65,7 @@ class ComposerStaticInitb9192972a083c45f077aafdffaf9c265
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb9192972a083c45f077aafdffaf9c265::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb9192972a083c45f077aafdffaf9c265::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb9192972a083c45f077aafdffaf9c265::$classMap;
 
         }, null, ClassLoader::class);
     }

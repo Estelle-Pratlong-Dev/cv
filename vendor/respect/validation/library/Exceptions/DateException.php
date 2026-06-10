@@ -1,43 +1,30 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Exceptions;
 
-class DateException extends ValidationException
+/**
+ * @author Bruno Luiz da Silva <contato@brunoluiz.net>
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ * @deprecated Using rule exceptions directly is deprecated, and will be removed in the next major version. Please use {@see ValidationException} instead.
+ */
+final class DateException extends ValidationException
 {
-    const FORMAT = 1;
-
-    public static $defaultTemplates = [
+    /**
+     * {@inheritDoc}
+     */
+    protected $defaultTemplates = [
         self::MODE_DEFAULT => [
-            self::STANDARD => '{{name}} must be a valid date',
-            self::FORMAT => '{{name}} must be a valid date. Sample format: {{format}}',
+            self::STANDARD => '{{name}} must be a valid date in the format {{sample}}',
         ],
         self::MODE_NEGATIVE => [
-            self::STANDARD => '{{name}} must not be a valid date',
-            self::FORMAT => '{{name}} must not be a valid date in the format {{format}}',
+            self::STANDARD => '{{name}} must not be a valid date in the format {{sample}}',
         ],
     ];
-
-    public function configure($name, array $params = [])
-    {
-        $params['format'] = date(
-            $params['format'],
-            strtotime('2005-12-30 01:02:03')
-        );
-
-        return parent::configure($name, $params);
-    }
-
-    public function chooseTemplate()
-    {
-        return $this->getParam('format') ? static::FORMAT : static::STANDARD;
-    }
 }

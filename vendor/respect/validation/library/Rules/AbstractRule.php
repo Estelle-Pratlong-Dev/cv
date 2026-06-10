@@ -1,85 +1,101 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
 use Respect\Validation\Exceptions\ValidationException;
+use Respect\Validation\Factory;
 use Respect\Validation\Validatable;
 
+/**
+ * @author Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ * @author Nick Lombard <github@jigsoft.co.za>
+ * @author Vicente Mendoza <vicentemmor@yahoo.com.mx>
+ *
+ * @deprecated This class is deprecated, and will be removed in the next major version. Use {@see \Respect\Validation\Rules\Core\Simple} instead.
+ */
 abstract class AbstractRule implements Validatable
 {
+    /**
+     * @var string|null
+     */
     protected $name;
+
+    /**
+     * @var string|null
+     */
     protected $template;
 
-    public function __invoke($input)
-    {
-        return $this->validate($input);
-    }
-
-    public function assert($input)
+    /**
+     * @deprecated Calling `assert()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::assert()} instead.
+     */
+    public function assert($input): void
     {
         if ($this->validate($input)) {
-            return true;
+            return;
         }
+
         throw $this->reportError($input);
     }
 
-    public function check($input)
+    /**
+     * @deprecated Calling `check()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::check()} instead.
+     */
+    public function check($input): void
     {
-        return $this->assert($input);
+        $this->assert($input);
     }
 
-    public function getName()
+    /**
+     * @deprecated Calling `getName()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::getName()} instead.
+     */
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function reportError($input, array $extraParams = [])
+    /**
+     * @param mixed[] $extraParams
+     * @deprecated Calling `reportError()` directly is deprecated, and will be removed in the next major version.
+     */
+    public function reportError($input, array $extraParams = []): ValidationException
     {
-        $exception = $this->createException();
-        $name = $this->name ?: ValidationException::stringify($input);
-        $params = array_merge(
-            get_class_vars(__CLASS__),
-            get_object_vars($this),
-            $extraParams,
-            compact('input')
-        );
-        $exception->configure($name, $params);
-        if (!is_null($this->template)) {
-            $exception->setTemplate($this->template);
-        }
-
-        return $exception;
+        return Factory::getDefaultInstance()->exception($this, $input, $extraParams);
     }
 
-    public function setName($name)
+    /**
+     * @deprecated Calling `setName()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::setName()} instead.
+     */
+    public function setName(string $name): Validatable
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function setTemplate($template)
+    /**
+     * @deprecated Calling `setTemplate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::setTemplate()} instead.
+     */
+    public function setTemplate(string $template): Validatable
     {
         $this->template = $template;
 
         return $this;
     }
 
-    protected function createException()
+    /**
+     * @deprecated Calling validator as a function is deprecated, and will be removed in the next major version.
+     * @param mixed $input
+     */
+    public function __invoke($input): bool
     {
-        $currentFqn = get_called_class();
-        $exceptionFqn = str_replace('\\Rules\\', '\\Exceptions\\', $currentFqn);
-        $exceptionFqn .= 'Exception';
-
-        return new $exceptionFqn();
+        return $this->validate($input);
     }
 }

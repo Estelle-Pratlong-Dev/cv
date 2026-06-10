@@ -1,44 +1,72 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
+use Respect\Validation\Exceptions\ComponentException;
 use Respect\Validation\Exceptions\ValidationException;
+use Respect\Validation\NonNegatable;
 use Respect\Validation\Validatable;
 
-class Not extends AbstractRule
+use function array_shift;
+use function count;
+use function current;
+use function get_class;
+use function sprintf;
+
+/**
+ * @author Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * @author Caio César Tavares <caiotava@gmail.com>
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ */
+final class Not extends AbstractRule
 {
-    public $rule;
+    /**
+     * @var Validatable
+     */
+    private $rule;
 
     public function __construct(Validatable $rule)
     {
-        $this->rule = $rule;
+        $this->rule = $this->extractNegatedRule($rule);
     }
 
-    public function setName($name)
+    public function getNegatedRule(): Validatable
+    {
+        return $this->rule;
+    }
+
+    /**
+     * @deprecated Calling `setName()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::setName()} instead.
+     */
+    public function setName(string $name): Validatable
     {
         $this->rule->setName($name);
 
         return parent::setName($name);
     }
 
-    public function validate($input)
+    /**
+     * @deprecated Calling `validate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::isValid()} instead.
+     */
+    public function validate($input): bool
     {
-        return (false == $this->rule->validate($input));
+        return $this->rule->validate($input) === false;
     }
 
-    public function assert($input)
+    /**
+     * @deprecated Calling `assert()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::assert()} instead.
+     */
+    public function assert($input): void
     {
         if ($this->validate($input)) {
-            return true;
+            return;
         }
 
         $rule = $this->rule;
@@ -46,12 +74,16 @@ class Not extends AbstractRule
             $rule = $this->absorbAllOf($rule, $input);
         }
 
-        throw $rule
-            ->reportError($input)
-            ->setMode(ValidationException::MODE_NEGATIVE);
+        $exception = $rule->reportError($input);
+        $exception->updateMode(ValidationException::MODE_NEGATIVE);
+
+        throw $exception;
     }
 
-    private function absorbAllOf(AllOf $rule, $input)
+    /**
+     * @param mixed $input
+     */
+    private function absorbAllOf(AllOf $rule, $input): Validatable
     {
         $rules = $rule->getRules();
         while (($current = array_shift($rules))) {
@@ -65,6 +97,33 @@ class Not extends AbstractRule
             }
 
             $rules = $rule->getRules();
+        }
+
+        return $rule;
+    }
+
+    private function extractNegatedRule(Validatable $rule): Validatable
+    {
+        if ($rule instanceof NonNegatable) {
+            throw new ComponentException(
+                sprintf(
+                    '"%s" can not be wrapped in Not()',
+                    get_class($rule)
+                )
+            );
+        }
+
+        if ($rule instanceof self && $rule->getNegatedRule() instanceof self) {
+            return $this->extractNegatedRule($rule->getNegatedRule()->getNegatedRule());
+        }
+
+        if (!$rule instanceof AllOf) {
+            return $rule;
+        }
+
+        $rules = $rule->getRules();
+        if (count($rules) === 1) {
+            return $this->extractNegatedRule(current($rules));
         }
 
         return $rule;

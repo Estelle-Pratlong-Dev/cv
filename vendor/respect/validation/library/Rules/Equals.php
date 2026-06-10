@@ -1,26 +1,42 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
-class Equals extends AbstractRule
+/**
+ * Validates if the input is equal to some value.
+ *
+ * @author Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ * @author Hugo Hamon <hugo.hamon@sensiolabs.com>
+ */
+final class Equals extends AbstractRule
 {
-    public $compareTo;
+    /**
+     * @var mixed
+     */
+    private $compareTo;
 
+    /**
+     * Initializes the rule.
+     *
+     * @param mixed $compareTo
+     */
     public function __construct($compareTo)
     {
         $this->compareTo = $compareTo;
     }
 
-    public function validate($input)
+    /**
+     * @deprecated Calling `validate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::isValid()} instead.
+     */
+    public function validate($input): bool
     {
         return $input == $this->compareTo;
     }

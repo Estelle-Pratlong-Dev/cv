@@ -1,43 +1,48 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Exceptions;
 
-class KeySetException extends GroupedValidationException
+use function count;
+
+/**
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ * @deprecated Using rule exceptions directly is deprecated, and will be removed in the next major version. Please use {@see ValidationException} instead.
+ */
+final class KeySetException extends GroupedValidationException implements NonOmissibleException
 {
-    const STRUCTURE = 2;
+    public const STRUCTURE = 'structure';
+    public const STRUCTURE_EXTRA = 'structure_extra';
 
     /**
-     * @var array
+     * {@inheritDoc}
      */
-    public static $defaultTemplates = [
+    protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NONE => 'All of the required rules must pass for {{name}}',
             self::SOME => 'These rules must pass for {{name}}',
             self::STRUCTURE => 'Must have keys {{keys}}',
-        ],
-        self::MODE_NEGATIVE => [
-            self::NONE => 'None of these rules must pass for {{name}}',
-            self::SOME => 'These rules must not pass for {{name}}',
-            self::STRUCTURE => 'Must not have keys {{keys}}',
+            self::STRUCTURE_EXTRA => 'Must not have keys {{extraKeys}}',
         ],
     ];
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function chooseTemplate()
+    protected function chooseTemplate(): string
     {
-        if ($this->getParam('keys')) {
-            return static::STRUCTURE;
+        if (count($this->getParam('extraKeys'))) {
+            return self::STRUCTURE_EXTRA;
+        }
+
+        if (count($this->getChildren()) === 0) {
+            return self::STRUCTURE;
         }
 
         return parent::chooseTemplate();

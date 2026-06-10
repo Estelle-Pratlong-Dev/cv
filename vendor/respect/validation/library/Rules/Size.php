@@ -1,74 +1,104 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
+use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Respect\Validation\Exceptions\ComponentException;
 use SplFileInfo;
 
+use function filesize;
+use function floatval;
+use function is_numeric;
+use function is_string;
+use function preg_match;
+use function sprintf;
+
 /**
- * Validate file size.
+ * Validates whether the input is a file that is of a certain size or not.
  *
+ * @author Danilo Correa <danilosilva87@gmail.com>
  * @author Henrique Moody <henriquemoody@gmail.com>
+ * @author Felipe Stival <v0idpwn@gmail.com>
  */
-class Size extends AbstractRule
+final class Size extends AbstractRule
 {
     /**
-     * @var string
+     * @var string|int|null
      */
-    public $minSize;
+    private $minSize;
 
     /**
-     * @var int
+     * @var float|null
      */
-    public $minValue;
+    private $minValue;
 
     /**
-     * @var string
+     * @var string|int|null
      */
-    public $maxSize;
+    private $maxSize;
 
     /**
-     * @var int
+     * @var float|null
      */
-    public $maxValue;
+    private $maxValue;
 
     /**
-     * @param string $minSize
-     * @param string $maxSize
+     * @param string|int|null $minSize
+     * @param string|int|null $maxSize
      */
     public function __construct($minSize = null, $maxSize = null)
     {
         $this->minSize = $minSize;
-        $this->minValue = $minSize ? $this->toBytes($minSize) : null;
+        $this->minValue = $minSize ? $this->toBytes((string) $minSize) : null;
         $this->maxSize = $maxSize;
-        $this->maxValue = $maxSize ? $this->toBytes($maxSize) : null;
+        $this->maxValue = $maxSize ? $this->toBytes((string) $maxSize) : null;
+    }
+
+    /**
+     * @deprecated Calling `validate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::isValid()} instead.
+     */
+    public function validate($input): bool
+    {
+        if ($input instanceof SplFileInfo) {
+            return $this->isValidSize((float) $input->getSize());
+        }
+
+        if ($input instanceof UploadedFileInterface) {
+            return $this->isValidSize((float) $input->getSize());
+        }
+
+        if ($input instanceof StreamInterface) {
+            return $this->isValidSize((float) $input->getSize());
+        }
+
+        if (is_string($input)) {
+            return $this->isValidSize((float) filesize($input));
+        }
+
+        return false;
     }
 
     /**
      * @todo Move it to a trait
      *
-     * @param mixed $size
-     *
-     * @return int
      */
-    private function toBytes($size)
+    private function toBytes(string $size): float
     {
         $value = $size;
         $units = ['b', 'kb', 'mb', 'gb', 'tb', 'pb', 'eb', 'zb', 'yb'];
         foreach ($units as $exponent => $unit) {
-            if (!preg_match("/^(\d+(.\d+)?){$unit}$/i", $size, $matches)) {
+            if (!preg_match('/^(\d+(.\d+)?)' . $unit . '$/i', $size, $matches)) {
                 continue;
             }
-            $value = $matches[1] * pow(1024, $exponent);
+            $value = floatval($matches[1]) * 1024 ** $exponent;
             break;
         }
 
@@ -76,40 +106,19 @@ class Size extends AbstractRule
             throw new ComponentException(sprintf('"%s" is not a recognized file size.', $size));
         }
 
-        return $value;
+        return (float) $value;
     }
 
-    /**
-     * @param int $size
-     *
-     * @return bool
-     */
-    private function isValidSize($size)
+    private function isValidSize(float $size): bool
     {
-        if (null !== $this->minValue && null !== $this->maxValue) {
-            return ($size >= $this->minValue && $size <= $this->maxValue);
+        if ($this->minValue !== null && $this->maxValue !== null) {
+            return $size >= $this->minValue && $size <= $this->maxValue;
         }
 
-        if (null !== $this->minValue) {
-            return ($size >= $this->minValue);
+        if ($this->minValue !== null) {
+            return $size >= $this->minValue;
         }
 
-        return ($size <= $this->maxValue);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function validate($input)
-    {
-        if ($input instanceof SplFileInfo) {
-            return $this->isValidSize($input->getSize());
-        }
-
-        if (is_string($input)) {
-            return $this->isValidSize(filesize($input));
-        }
-
-        return false;
+        return $size <= $this->maxValue;
     }
 }

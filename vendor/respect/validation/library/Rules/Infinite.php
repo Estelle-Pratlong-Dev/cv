@@ -1,26 +1,30 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
+use function is_infinite;
+use function is_numeric;
+
 /**
+ * Validates if the input is an infinite number
+ *
+ * @author Danilo Benevides <danilobenevides01@gmail.com>
  * @author Henrique Moody <henriquemoody@gmail.com>
  */
-class Infinite extends AbstractRule
+final class Infinite extends AbstractRule
 {
     /**
-     * {@inheritdoc}
+     * @deprecated Calling `validate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::isValid()} instead.
      */
-    public function validate($input)
+    public function validate($input): bool
     {
-        return is_numeric($input) && is_infinite($input);
+        return is_numeric($input) && is_infinite((float) $input);
     }
 }

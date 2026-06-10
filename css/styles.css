@@ -1,12 +1,24 @@
 /***************************************************************
+Variables
+***************************************************************/
+
+:root {
+    --color-accent:     #00A3E1;
+    --color-bg:         #0E0F10;
+    --color-bg-dark:    #070708;
+    --color-text:       #fff;
+    --color-text-muted: lightgray;
+}
+
+/***************************************************************
 Styles généraux
 ***************************************************************/
 
 body {
     text-align: center;
-    color: #fff;
+    color: var(--color-text);
     font-family: 'Ubuntu', sans-serif;
-    background: #0E0F10;
+    background: var(--color-bg);
 }
 
 h2 {
@@ -27,7 +39,7 @@ nav i:hover,
 #about .interest i,
 #resume .main i,
 #contact .links div:hover i {
-    color: #00A3E1;
+    color: var(--color-accent);
 }
 
 main i {
@@ -50,7 +62,7 @@ h3:after,
 #resume .item:after,
 #resume .item:hover h4:before,
 .skill-meter .completed {
-    background: #00A3E1;
+    background: var(--color-accent);
 }
 
 /***************************************************************
@@ -87,7 +99,7 @@ span.title:after {
     height: 16px;
     top: -40px;
     left: 5px;
-    border: 2px solid #00A3E1;
+    border: 2px solid var(--color-accent);
     border-radius: 50px 50px 0 50px;
     transform: rotate(135deg);
 }
@@ -100,7 +112,7 @@ span.title:before {
     top: -40px;
     left: auto;
     right: 0;
-    border: 2px solid #00A3E1;
+    border: 2px solid var(--color-accent);
     border-radius: 50px 50px 50px 0;
     transform: rotate(-135deg);
 }
@@ -121,7 +133,7 @@ Décoration sous-titres
     bottom: -16px;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: 3px solid #00A3E1;
+    border: 3px solid var(--color-accent);
 }
 
 h3:before {
@@ -153,13 +165,14 @@ nav {
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 2.5rem;
     z-index: 1;
 }
 
 nav i {
-    color: #fff;
+    color: var(--color-text);
 }
 
 
@@ -172,7 +185,7 @@ Pages
 #portfolio,
 #contact,
 #add-view {
-    background: #0E0F10;
+    background: var(--color-bg);
     position: absolute;
     right: 0;
     top: 0;
@@ -186,7 +199,7 @@ article {
     padding: 30px !important;
     margin: 30px auto 80px auto;
     border-radius: 10px;
-    background: #070708;
+    background: var(--color-bg-dark);
     transition: 0.3s;
 }
 
@@ -250,7 +263,7 @@ A propos
 }
 
 #about h5 i{
-    color: #00A3E1;
+    color: var(--color-accent);
 }
 
 #about img {
@@ -270,7 +283,7 @@ A propos
 
 #about .interest p {
     padding: 15px;
-    background: #0E0F10;
+    background: var(--color-bg);
 }
 
 #about .interest p i {
@@ -283,7 +296,7 @@ A propos
 }
 
 #about .view {
-    background: #0E0F10;
+    background: var(--color-bg);
     border-radius: 10px;
     padding: 15px;
     margin: 10px;
@@ -292,12 +305,12 @@ A propos
 
 /*************** Bouton CV ******************/
 #about .dl-cv a {
-    border: 1px solid #00A3E1;
+    border: 1px solid var(--color-accent);
     padding: 5px 20px;
     text-decoration: none;
-    color: #fff;
+    color: var(--color-text);
 
-    background-image: linear-gradient(to right, #00A3E1 50%, transparent 50%);
+    background-image: linear-gradient(to right, var(--color-accent) 50%, transparent 50%);
     background-position: right bottom;
     background-size: 200% 100%;
     transition: all 300ms ease;
@@ -361,8 +374,8 @@ CV
     height: 13px;
     top: 15px;
     left: -6px;
-    background: #070708;
-    border: 2px solid #00A3E1;
+    background: var(--color-bg-dark);
+    border: 2px solid var(--color-accent);
     border-radius: 50%;
     z-index: 1;
 }
@@ -374,7 +387,7 @@ CV
 
 #resume .quality p {
     padding: 15px;
-    background: #0E0F10;
+    background: var(--color-bg);
 }
 
 
@@ -393,7 +406,7 @@ CV
 
 #resume .skills i {
     font-size: 30px;
-    color: #fff;
+    color: var(--color-text);
 }
 
 .skill {
@@ -413,7 +426,7 @@ CV
 
 .skill-meter span {
   width: 6px;
-  border: 2px solid #00A3E1; /* bleu lumineux */
+  border: 2px solid var(--color-accent); /* bleu lumineux */
   background: transparent;
   display: inline-block;
 }
@@ -436,13 +449,17 @@ CV
 Portfolio
 ***************************************************************/
 
+#portfolio {
+    padding-top: clamp(60px, 15vh, 160px);
+}
+
 #portfolio div.row {
     justify-content: center;
 }
 
 #portfolio figure {
     margin: 20px;
-    background: #fff;
+    background: var(--color-text);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -470,7 +487,7 @@ Portfolio
 }
 
 #portfolio a {
-    color: #fff !important;
+    color: var(--color-text) !important;
 }
 
 #portfolio figure:hover figcaption {
@@ -503,7 +520,7 @@ input,
 textarea,
 input::placeholder,
 textarea::placeholder {
-    color: lightgray;
+    color: var(--color-text-muted);
 }
 
 input {
@@ -515,14 +532,14 @@ input[type=email],
 textarea {
     background: transparent;
     border: none;
-    border-bottom: lightgray 1px solid;
+    border-bottom: var(--color-text-muted) 1px solid;
     margin: 30px;
 }
 
 input[type=submit] {
     padding: 0 20px;
 
-    background-image: linear-gradient(to right, #00A3E1 50%, #0E0F10 50%);
+    background-image: linear-gradient(to right, var(--color-accent) 50%, var(--color-bg) 50%);
     background-position: right bottom;
     background-size: 200% 100%;
     transition: all 300ms ease;
@@ -533,6 +550,11 @@ input[type=submit]:hover {
 
 }
 
+/*********************** Centrage vertical contact ****************************/
+#contact {
+    padding-top: clamp(60px, 15vh, 160px);
+}
+
 /*********************** Liens ****************************/
 #contact .links {
     display: flex;
@@ -540,7 +562,7 @@ input[type=submit]:hover {
 }
 
 #contact .links i {
-    color: #fff;
+    color: var(--color-text);
     font-size: 2em;
 }
 

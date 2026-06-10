@@ -1,50 +1,69 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
-use Respect\Validation\Exceptions\ComponentException;
 use Respect\Validation\Validatable;
 
+/**
+ * Abstract class to help on creating rules that wrap rules.
+ *
+ * @author Alasdair North <alasdair@runway.io>
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ *
+ * @deprecated This class is deprecated, and will be removed in the next major version. Use {@see \Respect\Validation\Rules\Core\Wrapper} instead.
+ */
 abstract class AbstractWrapper extends AbstractRule
 {
-    protected $validatable;
+    /**
+     * @var Validatable
+     */
+    private $validatable;
 
-    public function getValidatable()
+    /**
+     * Initializes the rule.
+     */
+    public function __construct(Validatable $validatable)
     {
-        if (!$this->validatable instanceof Validatable) {
-            throw new ComponentException('There is no defined validatable');
-        }
-
-        return $this->validatable;
+        $this->validatable = $validatable;
     }
 
-    public function assert($input)
+    /**
+     * @deprecated Calling `assert()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::assert()} instead.
+     */
+    public function assert($input): void
     {
-        return $this->getValidatable()->assert($input);
+        $this->validatable->assert($input);
     }
 
-    public function check($input)
+    /**
+     * @deprecated Calling `check()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::check()} instead.
+     */
+    public function check($input): void
     {
-        return $this->getValidatable()->check($input);
+        $this->validatable->check($input);
     }
 
-    public function validate($input)
+    /**
+     * @deprecated Calling `validate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::isValid()} instead.
+     */
+    public function validate($input): bool
     {
-        return $this->getValidatable()->validate($input);
+        return $this->validatable->validate($input);
     }
 
-    public function setName($name)
+    /**
+     * @deprecated Calling `setName()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::setName()} instead.
+     */
+    public function setName(string $name): Validatable
     {
-        $this->getValidatable()->setName($name);
+        $this->validatable->setName($name);
 
         return parent::setName($name);
     }

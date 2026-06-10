@@ -1,30 +1,47 @@
 <?php
 
 /*
- * This file is part of Respect/Validation.
- *
- * (c) Alexandre Gomes Gaigalas <alexandre@gaigalas.net>
- *
- * For the full copyright and license information, please view the "LICENSE.md"
- * file that was distributed with this source code.
+ * Copyright (c) Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * SPDX-License-Identifier: MIT
  */
+
+declare(strict_types=1);
 
 namespace Respect\Validation\Rules;
 
 use Respect\Validation\Exceptions\AlwaysInvalidException;
 use Respect\Validation\Validatable;
 
-class When extends AbstractRule
+/**
+ * A ternary validator that accepts three parameters.
+ *
+ * @author Alexandre Gomes Gaigalas <alganet@gmail.com>
+ * @author Danilo Correa <danilosilva87@gmail.com>
+ * @author Henrique Moody <henriquemoody@gmail.com>
+ * @author Hugo Hamon <hugo.hamon@sensiolabs.com>
+ */
+final class When extends AbstractRule
 {
-    public $when;
-    public $then;
-    public $else;
+    /**
+     * @var Validatable
+     */
+    private $when;
 
-    public function __construct(Validatable $when, Validatable $then, Validatable $else = null)
+    /**
+     * @var Validatable
+     */
+    private $then;
+
+    /**
+     * @var Validatable
+     */
+    private $else;
+
+    public function __construct(Validatable $when, Validatable $then, ?Validatable $else = null)
     {
         $this->when = $when;
         $this->then = $then;
-        if (null === $else) {
+        if ($else === null) {
             $else = new AlwaysInvalid();
             $else->setTemplate(AlwaysInvalidException::SIMPLE);
         }
@@ -32,7 +49,10 @@ class When extends AbstractRule
         $this->else = $else;
     }
 
-    public function validate($input)
+    /**
+     * @deprecated Calling `validate()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::isValid()} instead.
+     */
+    public function validate($input): bool
     {
         if ($this->when->validate($input)) {
             return $this->then->validate($input);
@@ -41,21 +61,31 @@ class When extends AbstractRule
         return $this->else->validate($input);
     }
 
-    public function assert($input)
+    /**
+     * @deprecated Calling `assert()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::assert()} instead.
+     */
+    public function assert($input): void
     {
         if ($this->when->validate($input)) {
-            return $this->then->assert($input);
+            $this->then->assert($input);
+
+            return;
         }
 
-        return $this->else->assert($input);
+        $this->else->assert($input);
     }
 
-    public function check($input)
+    /**
+     * @deprecated Calling `check()` directly from rules is deprecated. Please use {@see \Respect\Validation\Validator::check()} instead.
+     */
+    public function check($input): void
     {
         if ($this->when->validate($input)) {
-            return $this->then->check($input);
+            $this->then->check($input);
+
+            return;
         }
 
-        return $this->else->check($input);
+        $this->else->check($input);
     }
 }
