@@ -290,18 +290,6 @@ A propos
     font-size: 20px;
 }
 
-/********************* Avis ******************/
-#about .all-view {
-    justify-content: center;
-}
-
-#about .view {
-    background: var(--color-bg);
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-    text-align: left;
-}
 
 /*************** Bouton CV ******************/
 #about .dl-cv a {
@@ -329,10 +317,6 @@ CV
     font-weight: bold;
 }
 
-#resume .experience,
-#resume .education {
-	min-height: 780px;
-}
 
 /* Ecarter les élements */
 #resume .education .item{
@@ -398,7 +382,7 @@ CV
 }
 
 
-#resume .skills .responsive img,
+#resume .skills .wp img,
 #resume .skills .springboot img {
     width: 30px;
     margin-right: 5px;

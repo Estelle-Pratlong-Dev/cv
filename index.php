@@ -126,7 +126,10 @@
                                     <p><i class="fas fa-industry"></i> TEAMBER (31)<br>
                                         <i class="fas fa-calendar-alt"></i> 01/2020 à ce jour</p>
                                 </div>
-                                <p>Développement Backend, développement Frontend, intégration web, support client, migration de données, analyse de data, paramétrage d'export comptable, gestion de projet, etc...</p>
+                                <p>Développement et maintenance d'applications web, principalement en PHP et Drupal, ainsi que développement front-end et intégration web.<br><br>
+								Analyse, correction et migration de données entre différents systèmes. Paramétrage et maintenance d'exports comptables. Support technique et résolution d'incidents sur les applications en production.<br><br>
+								Gestion de projet en collaboration avec un prestataire externe : organisation et priorisation des sprints, suivi des développements, échanges techniques avec les développeurs, planification des déploiements et rédaction des notes de mise à jour.<br><br>
+								Participation au développement du nouveau logiciel en Java / Spring Boot.</p>
                             </div>
                             <div class="item">
                                 <div class="main">
@@ -134,7 +137,7 @@
                                     <p><i class="fas fa-industry"></i> CREA2F (31)<br>
                                         <i class="fas fa-calendar-alt"></i> 09/2019 - 10/2019</p>
                                 </div>
-                                <p>Résolution de bug, ajout et modification de contenu, sourcing, retouche images, rédaction de documentation et surtout création de site web sur Wordpress.</p>
+                                <p>Résolution de bugs, ajout et modification de contenus, création d'un site sous WordPress, sourcing et retouche d'images, rédaction de documentation.</p>
                             </div>
                             <div class="item">
                                 <div class="main">
@@ -142,7 +145,7 @@
                                     <p><i class="fas fa-industry"></i> Innoset, Roldan (31) / Katoen Natie, Office dépôt, Distrimag (13)<br>
                                         <i class="fas fa-calendar-alt"></i> 2011 - 2018</p>
                                 </div>
-                                <p>Conduite de chariot élévateur, chargement de camions, préparation et contrôle de commandes, montage et filmage de palettes, manipulation de logiciels entreprise...</p>
+                                <p>Conduite de chariot élévateur, chargement de camions, préparation et contrôle de commandes, montage et filmage de palettes, utilisation de logiciels d'entreprise</p>
                             </div>
                             <div class="item">
                                 <div class="main">
@@ -150,7 +153,7 @@
                                     <p><i class="fas fa-industry"></i> Abrivado ranch (30)<br>
                                         <i class="fas fa-calendar-alt"></i> Été 2011</p>
                                 </div>
-                                <p>Soins des chevaux, accueil clients, accompagnement et animation des promenades...</p>
+                                <p>Soins des chevaux, accueil des clients, accompagnement et animation de promenades.</p>
                             </div>
                         </article>
                     </div>
@@ -166,21 +169,7 @@
                                     <p><i class="fas fa-school"></i> Web Force 3 Toulouse<br>
                                         <i class="fas fa-calendar-alt"></i> 05/2019 - 10/2019</p>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="main">
-                                    <h4>Certifications OpenClassrooms</h4>
-                                    <p><i class="fas fa-school"></i> OpenClassrooms<br>
-                                        <i class="fas fa-calendar-alt"></i> 2019 </p>
-                                </div>
-                                <ul>
-                                    <li>Créer votre site web avec HTML5 et CSS3</li>
-                                    <li>Prenez en main Bootstrap</li>
-                                    <li>Découvrez le fonctionnement des algorythmes</li>
-                                    <li>Introduction à jQuery</li>
-                                    <li>Concevez votre site web avec PHP et MySQL </li>
-                                    <li>Adoptez une architecture MVC en PHP</li>
-                                </ul>
+								<p>Formation intensive au développement web front-end et back-end : HTML, CSS, JavaScript, jQuery/AJAX, PHP, SQL et Symfony. Initiation à React et Angular. Réalisation de projets pratiques individuels et en équipe.</p>
                             </div>
                             <div class="item">
                                 <div class="main">
@@ -220,13 +209,13 @@
                         <p> Rigueur / sens du détail </p>
                     </div>
                     <div class="col-md-3">
-                        <p> Esprit d'analyse / Esprit critique </p>
+                        <p> Esprit d'analyse et critique </p>
                     </div>
                     <div class="col-md-3">
-                        <p> Capacités d'adaptation </p>
+                        <p> Capacité d'adaptation </p>
                     </div>
                     <div class="col-md-3">
-                        <p> Réactivité </p>
+                        <p> Polyvalence </p>
                     </div>
 					 <div class="col-md-3">
                         <p> Sens du service </p>
@@ -257,11 +246,11 @@
 						</div>
                     </div>
                     <div class="col-md-3 skill">
-                        <h4><i class="fab fa-js-square"></i> Javascript</h4>
-						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
+                        <h4><i class="fab fa-js-square"></i> JavaScript</h4>
+						<div class="skill-meter" data-bs-toggle="tooltip" title="Confirmé">
 							<span class="level1 completed"></span>
 							<span class="level2 completed"></span>
-							<span class="level3"></span>
+							<span class="level3 completed"></span>
 							<span class="level4"></span>
 						</div>
                     </div>
@@ -284,7 +273,7 @@
 						</div>
                     </div>
 					<div class="col-md-3 skill">
-                        <h4><i class="fa-brands fa-java"></i> JAVA</h4>
+                        <h4><i class="fa-brands fa-java"></i> Java</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Débutant">
 							<span class="level1 completed"></span>
 							<span class="level2"></span>
@@ -292,8 +281,17 @@
 							<span class="level4"></span>
 						</div>
                     </div>
+                    <div class="col-md-3 skill wp">
+                        <h4><i class="fa-brands fa-wordpress"></i> WordPress</h4>
+						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
+							<span class="level1 completed"></span>
+							<span class="level2 completed"></span>
+							<span class="level3"></span>
+							<span class="level4"></span>
+						</div>
+                    </div>
 					<div class="col-md-3 skill">
-                        <h4><i class="fa-brands fa-square-git"></i> GIT</h4>
+                        <h4><i class="fa-brands fa-square-git"></i> Git</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
 							<span class="level1 completed"></span>
 							<span class="level2 completed"></span>
@@ -301,16 +299,6 @@
 							<span class="level4"></span>
 						</div>
                     </div>
-                    <div class="col-md-3 skill responsive">
-                        <h4><img src="img/phone-laptop.png" alt="Icône responsive"> Responsive Design</h4>
-						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
-							<span class="level1 completed"></span>
-							<span class="level2 completed"></span>
-							<span class="level3"></span>
-							<span class="level4"></span>
-						</div>
-                    </div>
-
                     <div class="col-md-3 skill">
                         <h4><i class="fab fa-symfony"></i> Symfony</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
