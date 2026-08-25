@@ -1,21 +1,11 @@
-<?php
-session_start();
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-require 'verifForm.php';
-require 'add-view.php';
-require 'inc/show-views.php';
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>CV PRATLONG Estelle Développeuse / SaaS Gard/Sud Ardèche</title>
+	<title>CV PRATLONG Estelle Développeuse web full-stack Gard/Sud Ardèche</title>
 	<meta name="description" content="CV d'Estelle PRATLONG, titulaire du 	titre professionnel de développeur web et web mobile. Langages connus : 	HTML, CSS, JS, SQL, PHP, Symfony.">
-	
+
 	<link rel="icon" type="image/png" href="img/cv-fav.jpg" />
 	<!-- Bootstrap 5 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,20 +19,19 @@ require 'inc/show-views.php';
 
 </head>
 <body>
-  <nav>
-        <a href="#home" id="home_button" title="Accueil"><i class="fa-solid fa-house"></i></a>
-        <a href="#about" id="about_button" title="Á propos"><i class="fas fa-user-tie"></i></a>
-        <a href="#resume" id="resume_button" title="CV"><i class="fas fa-address-book"></i></a>
-        <a href="#portfolio" id="portfolio_button" title="Portfolio"><i class="fas fa-briefcase"></i></a>
-        <a href="#contact" id="contact_button" title="Contact"><i class="fas fa-envelope"></i></a>
-        <a href="#add-view" id="add-view_button" title="Donner un avis"><i class="fas fa-edit"></i></a>
-    </nav>
+ 	<nav>
+		<a href="#home" id="home_button" data-bs-toggle="tooltip" title="Accueil"><i class="fa-solid fa-house"></i></a>
+		<a href="#about" id="about_button" data-bs-toggle="tooltip" title="Á propos"><i class="fas fa-user-tie"></i></a>
+		<a href="#resume" id="resume_button" data-bs-toggle="tooltip" title="CV"><i class="fas fa-address-book"></i></a>
+		<a href="#portfolio" id="portfolio_button" data-bs-toggle="tooltip" title="Portfolio"><i class="fas fa-briefcase"></i></a>
+		<a href="#contact" id="contact_button" data-bs-toggle="tooltip" title="Contact"><i class="fas fa-envelope"></i></a>
+	</nav>
 
 
    <!-------------------------------------- ACCUEIL -------------------------------------->
     <header>
         <h1>Estelle PRATLONG</h1>
-        <div>Développeuse Web / SaaS</div>
+        <div>Développeuse Web full-stack</div>
     </header>
 
 
@@ -63,21 +52,19 @@ require 'inc/show-views.php';
 				</figure>
 				<div class="col-md-8">
 					<div class="me">
-					<h4>Estelle PRATLONG</h4>
-					<p><i class="fas fa-map-marked-alt"></i> Gagnières (30) <br><br>
-						Autodidacte passionnée d’informatique depuis toujours, j’ai naturellement choisi de formaliser mon parcours par une formation de développeuse web, afin d’approfondir et d’enrichir mes compétences techniques.
-						<br><br>
-						Aujourd’hui titulaire du titre professionnel Développeur Web et Web Mobile, j’ai développé une solide expérience en développement web et SaaS, en participant à des projets concrets et exigeants.
-						<br><br>
-						Toujours curieuse et engagée, je cherche constamment à acquérir de nouvelles compétences et à relever des défis stimulants qui me permettent de faire évoluer mon savoir-faire et d’apporter une vraie valeur ajoutée aux projets auxquels je participe.
-					</p>
+						<h4>Estelle PRATLONG</h4>
+							<p><i class="fas fa-map-marked-alt"></i> Gagnières (30) <br><br>
+								Développeuse web full-stack, j'évolue depuis 2020 sur des applications métier, principalement autour de PHP, Drupal, JavaScript et des bases de données relationnelles.<br><br>
+								Mon expérience m'a amenée à intervenir sur des domaines variés : développement et maintenance d'applications, intégration web, analyse et migration de données, support technique ou encore coordination de développements avec des équipes externes.<br><br>
+								Curieuse et autodidacte, j'aime comprendre le fonctionnement global d'un projet et ne pas me limiter à une seule couche technique. Je continue à développer mes compétences à travers des projets personnels, notamment en PHP/Symfony et autour de la création de sites web.
+							</p>
+						</div>
 					</div>
-				</div>
 				</div>
 
 				<div class="row mt-4">
 					<div class="col-md-4 offset-md-4 text-center dl-cv">
-						<a href="img/pratlong-estelle-cv.pdf" target="_blank">Télécharger mon CV</a>
+						<a href="img/pratlong-estelle-cv.pdf" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
 					</div>
 				</div>
 			</article>
@@ -117,25 +104,7 @@ require 'inc/show-views.php';
 					</div>
 				</div>
 			</article>
-
-			<div class="subtitle">
-				<h3>Avis</h3>
-			</div>
-
-			<article class="container">
-				<div class="row all-view">
-				<?php foreach ($views as $views) : ?>
-					<div class="col-md-4">
-					<div class="view">
-						<h4><?= htmlspecialchars($views['name'],    ENT_QUOTES, 'UTF-8') ?></h4>
-						<h5><i class="fas fa-briefcase"></i> <?= htmlspecialchars($views['function'], ENT_QUOTES, 'UTF-8') ?></h5>
-						<p><?= htmlspecialchars($views['message'], ENT_QUOTES, 'UTF-8') ?></p>
-					</div>
-					</div>
-				<?php endforeach; ?>
-				</div>
-			</article>
-			</section>
+		</section>
 
         <!-------------------------------------- CV --------------------------------------->
         <section id="resume">
@@ -158,7 +127,7 @@ require 'inc/show-views.php';
                                     <p><i class="fas fa-industry"></i> TEAMBER (31)<br>
                                         <i class="fas fa-calendar-alt"></i> 01/2020 à ce jour</p>
                                 </div>
-                                <p>Développement Backend, développement Frontend, intégration web, support client, migration de données, data analyse, paramétrage d'export comptable, gestion de projet, etc...</p>
+                                <p>Développement Backend, développement Frontend, intégration web, support client, migration de données, analyse de data, paramétrage d'export comptable, gestion de projet, etc...</p>
                             </div>
                             <div class="item">
                                 <div class="main">
@@ -252,10 +221,10 @@ require 'inc/show-views.php';
                         <p> Rigueur / sens du détail </p>
                     </div>
                     <div class="col-md-3">
-                        <p> Esprit d’analyse / Esprit critique </p>
+                        <p> Esprit d'analyse / Esprit critique </p>
                     </div>
                     <div class="col-md-3">
-                        <p> Capacités d’adaptation </p>
+                        <p> Capacités d'adaptation </p>
                     </div>
                     <div class="col-md-3">
                         <p> Réactivité </p>
@@ -298,15 +267,6 @@ require 'inc/show-views.php';
 						</div>
                     </div>
 					<div class="col-md-3 skill">
-                        <h4><i class="fab fa-php"></i> PHP</h4>
-						<div class="skill-meter" data-bs-toggle="tooltip" title="Confirmé">
-							<span class="level1 completed"></span>
-							<span class="level2 completed"></span>
-							<span class="level3 completed"></span>
-							<span class="level4"></span>
-						</div>
-                    </div>
-					<div class="col-md-3 skill">
 						<h4><i class="fas fa-database"></i> SQL</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Confirmé">
 							<span class="level1 completed"></span>
@@ -315,6 +275,15 @@ require 'inc/show-views.php';
 							<span class="level4"></span>
 						</div>
 					</div>
+					<div class="col-md-3 skill">
+                        <h4><i class="fab fa-php"></i> PHP</h4>
+						<div class="skill-meter" data-bs-toggle="tooltip" title="Confirmé">
+							<span class="level1 completed"></span>
+							<span class="level2 completed"></span>
+							<span class="level3 completed"></span>
+							<span class="level4"></span>
+						</div>
+                    </div>
 					<div class="col-md-3 skill">
                         <h4><i class="fa-brands fa-java"></i> JAVA</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Débutant">
@@ -342,7 +311,7 @@ require 'inc/show-views.php';
 							<span class="level4"></span>
 						</div>
                     </div>
-                    
+
                     <div class="col-md-3 skill">
                         <h4><i class="fab fa-symfony"></i> Symfony</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
@@ -352,6 +321,15 @@ require 'inc/show-views.php';
 							<span class="level4"></span>
 						</div>
                     </div>
+					<div class="col-md-3 skill springboot">
+						<h4><img src="img/springboot.png" alt="Logo Spring Boot"> Spring Boot</h4>
+						<div class="skill-meter" data-bs-toggle="tooltip" title="Débutant">
+							<span class="level1 completed"></span>
+							<span class="level2"></span>
+							<span class="level3"></span>
+							<span class="level4"></span>
+						</div>
+					</div>
                     <div class="col-md-3 skill">
                         <h4><i class="fab fa-drupal"></i> Drupal</h4>
 						<div class="skill-meter" data-bs-toggle="tooltip" title="Intermédiaire">
@@ -370,16 +348,6 @@ require 'inc/show-views.php';
 							<span class="level4"></span>
 						</div>
                     </div>
-					
-					<div class="col-md-3 skill springboot">
-                        <h4><img src="img/springboot.png" alt="Logo Spring Boot"> Spring Boot</h4>
-						<div class="skill-meter" data-bs-toggle="tooltip" title="Débutant">
-							<span class="level1 completed"></span>
-							<span class="level2"></span>
-							<span class="level3"></span>
-							<span class="level4"></span>
-						</div>
-                    </div>
 
                 </div>
             </article>
@@ -395,7 +363,7 @@ require 'inc/show-views.php';
             <div class="container">
                 <div class="row">
                     <figure class="col-md-3">
-						<a href="https://my-meteo.pratlong-estelle-site.fr/" target="_blank">
+						<a href="https://my-meteo.pratlong-estelle-site.fr/" target="_blank" rel="noopener noreferrer">
 							<img src="img/projects/my_meteo-logo.png" alt="Logo My Météo">
 							<figcaption>
 								<h4>My météo</h4>
@@ -404,13 +372,13 @@ require 'inc/show-views.php';
 						</a>
                     </figure>
 					<figure class="col-md-3">
-						<a href="https://south-west-store.pratlong-estelle-site.fr/" target="_blank">
+						<a href="https://south-west-store.pratlong-estelle-site.fr/" target="_blank" rel="noopener noreferrer">
 							<img src="img/projects/south_west_store-logo.png" alt="Logo South West Store">
 							<figcaption>
 								<h4>South-West-Store</h4>
 								<p>Site e-commerce de sneakers de collection</p>
 							</figcaption>
-							</a>
+						</a>
 					</figure>
                     <figure class="col-md-3 vic">
                         <img src="img/projects/vic_capital-logo.png" alt="Logo Vic Capital">
@@ -420,7 +388,7 @@ require 'inc/show-views.php';
                         </figcaption>
                     </figure>
                     <figure class="col-md-3">
-						<a href="http://CV-web.pratlong-estelle-site.fr" target="_blank">
+						<a href="http://CV-web.pratlong-estelle-site.fr" target="_blank" rel="noopener noreferrer">
 							<img src="img/cv-fav.jpg" alt="Logo CV">
 							<figcaption>
 								<h4>CV web</h4>
@@ -447,26 +415,6 @@ require 'inc/show-views.php';
                 <span class="title"></span>
             </div>
 
-            <article class="container">
-                <form method="post">
-
-                    <div id="msg"></div>
-
-                    <div class="row">
-                        <input type="text" id="name" name="contact_name" class="col" placeholder="Nom" required>
-
-                        <input type="email" id="email" name="contact_email" class="col offset-1" placeholder="Email" required>
-                    </div>
-
-                    <div class="row">
-                        <textarea name="contact_message" id="message" cols="10" rows="5" class="col" placeholder="Votre message" required></textarea>
-                    </div>
-                    <input type="hidden" name="action" value="contact-form">
-                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
-                    <input type="submit" value="Envoyer">
-                </form>
-            </article>
-
             <article class="container links">
                 <div>
                     <a href="tel:0611536708"><i class="fas fa-mobile-alt"></i></a>
@@ -477,55 +425,22 @@ require 'inc/show-views.php';
                     <p>Email</p>
                 </div>
                 <div>
-                    <a href="https://www.linkedin.com/in/estelle-pratlong-dev5871184" target="blank"> <i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/estelle-pratlong-dev5871184" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <p>LinkedIn</p>
                 </div>
                 <div>
-                    <a href="https://github.com/Estelle-Pratlong-Dev?tab=repositories" target="blank"> <i class="fab fa-github"></i></a>
+                    <a href="https://github.com/Estelle-Pratlong-Dev?tab=repositories" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <p>GitHub</p>
                 </div>
             </article>
         </section>
 
-        <!--------------------------------- AJOUTER UN AVIS ---------------------------------->
-        <section id="add-view">
-            <div class="header-page">
-                <h2>Donnez votre avis</h2>
-                <span class="title"></span>
-            </div>
-
-            <article class="container">
-                <form method="post">
-
-                    <div id="msg-view"></div>
-
-                    <div class="row">
-                        <input type="text" id="name" name="view_name" class="col" placeholder="Nom" required>
-
-                        <input type="text" id="function" name="view_function" class="col offset-1" placeholder="Métier" required>
-                    </div>
-
-                    <div class="row">
-                        <textarea name="view_message" id="message" cols="10" rows="5" class="col" placeholder="Votre message" required></textarea>
-                    </div>
-
-                    <input type="hidden" name="action" value="view-form">
-                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
-                    <input type="submit" value="Envoyer">
-                </form>
-            </article>
-
-        </section>
     </main>
 
-
-
-    <!-- Jquery -->
+	<!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- script alert "Mail send"-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	<!-- Bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Mon script -->
     <script src="js/script.js"></script>
 </body>

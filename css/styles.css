@@ -183,8 +183,8 @@ Pages
 #about,
 #resume,
 #portfolio,
-#contact,
-#add-view {
+#contact {
+    display: none;
     background: var(--color-bg);
     position: absolute;
     right: 0;
@@ -515,41 +515,6 @@ Portfolio
 Contact
 ***************************************************************/
 
-/**************** Formulaires *********************/
-input,
-textarea,
-input::placeholder,
-textarea::placeholder {
-    color: var(--color-text-muted);
-}
-
-input {
-    line-height: 50px;
-}
-
-input[type=text],
-input[type=email],
-textarea {
-    background: transparent;
-    border: none;
-    border-bottom: var(--color-text-muted) 1px solid;
-    margin: 30px;
-}
-
-input[type=submit] {
-    padding: 0 20px;
-
-    background-image: linear-gradient(to right, var(--color-accent) 50%, var(--color-bg) 50%);
-    background-position: right bottom;
-    background-size: 200% 100%;
-    transition: all 300ms ease;
-}
-
-input[type=submit]:hover {
-    background-position: left bottom;
-
-}
-
 /*********************** Centrage vertical contact ****************************/
 #contact {
     padding-top: clamp(60px, 15vh, 160px);
@@ -613,15 +578,3 @@ Réglages Firefox
 }
 
 
-/***************************************************************
-************                                *********************
-************                                *********************
-************     CACHER "DONNER UN AVIS     *********************
-************                                *********************
-************                                *********************
-***************************************************************/
-
-#add-view,
-#add-view_button {
-    display: none;
-}
