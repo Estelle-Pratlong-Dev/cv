@@ -182,8 +182,7 @@ Pages
 
 #about,
 #resume,
-#portfolio,
-#contact {
+#portfolio {
     display: none;
     background: var(--color-bg);
     position: absolute;
@@ -193,6 +192,7 @@ Pages
     min-height: 100vh;
     padding: 20px auto;
     padding-left: 12vw;
+    padding-bottom: 100px;
 }
 
 article {
@@ -512,27 +512,39 @@ Portfolio
 }
 
 /***************************************************************
-Contact
+Footer
 ***************************************************************/
 
-/*********************** Centrage vertical contact ****************************/
-#contact {
-    padding-top: clamp(60px, 15vh, 160px);
-}
-
-/*********************** Liens ****************************/
-#contact .links {
-    display: flex;
+#footer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 7vw;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
     justify-content: space-around;
+    align-items: center;
+    z-index: 1;
 }
 
-#contact .links i {
+#footer div {
+    text-align: center;
+}
+
+#footer i {
     color: var(--color-text);
     font-size: 2em;
 }
 
-#contact .links p {
-    margin: 10px;
+#footer i:hover {
+    color: var(--color-accent);
+}
+
+#footer p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: var(--color-text-muted);
 }
 
 

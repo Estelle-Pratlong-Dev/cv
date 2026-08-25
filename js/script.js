@@ -1,51 +1,46 @@
 $(document).ready(function () {
 
-    $("#about, #resume, #portfolio, #contact").hide();
+    const $sections = $("#about, #resume, #portfolio");
+    const $footer = $("#footer");
+    const $navIcons = $("#home_button i, #about_button i, #resume_button i, #portfolio_button i");
 
+    $sections.hide();
+    $footer.hide();
+
+    function activateNav(btnId) {
+        $navIcons.css("color", "#fff");
+        $("#" + btnId + " i").css({ "color": "#00A3E1", "transition": "1s" });
+    }
+
+    function showSection($section, btnId) {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        $sections.fadeOut(400);
+        $footer.fadeOut(400);
+        $section.delay(400).fadeIn(400);
+        $footer.delay(400).css("display", "flex").hide().fadeIn(400);
+        activateNav(btnId);
+    }
 
     $("#home_button").on("click", function () {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
-        $("#about, #resume, #portfolio, #contact").fadeOut(500);
-        $("#home_button i, #about_button i, #resume_button i, #portfolio_button i, #contact_button i").css("color", "#fff");
-        $("#home_button i").css("color", "#00A3E1").css("transition", "1s");
-        
+        $sections.fadeOut(500);
+        $footer.fadeOut(500);
+        activateNav('home_button');
     });
-    
+
     $("#about_button").on("click", function () {
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        $("#about, #resume, #portfolio, #contact").fadeOut(500);
-        $("#about").delay(500).fadeIn(500);
-        $("#home_button i, #about_button i, #resume_button i, #portfolio_button i, #contact_button i").css("color", "#fff");
-        $("#about_button i").css("color", "#00A3E1").css("transition", "1s");
+        showSection($("#about"), 'about_button');
     });
-    
+
     $("#resume_button").on("click", function () {
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        $("#about, #resume, #portfolio, #contact").fadeOut(500);
-        $("#resume").delay(500).fadeIn(500);
-        $("#home_button i, #about_button i, #resume_button i, #portfolio_button i, #contact_button i").css("color", "#fff");
-        $("#resume_button i").css("color", "#00A3E1").css("transition", "1s");
+        showSection($("#resume"), 'resume_button');
     });
-    
+
     $("#portfolio_button").on("click", function () {
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        $("#about, #resume, #portfolio, #contact").fadeOut(500);
-        $("#portfolio").delay(500).fadeIn(500);
-        $("#home_button i, #about_button i, #resume_button i, #portfolio_button i, #contact_button i").css("color", "#fff");
-        $("#portfolio_button i").css("color", "#00A3E1").css("transition", "1s");
-    });
-    
-    $("#contact_button").on("click", function () {
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        $("#about, #resume, #portfolio, #contact").fadeOut(500);
-        $("#contact").delay(500).fadeIn(500);
-        $("#home_button i, #about_button i, #resume_button i, #portfolio_button i, #contact_button i").css("color", "#fff");
-        $("#contact_button i").css("color", "#00A3E1").css("transition", "1s");
+        showSection($("#portfolio"), 'portfolio_button');
     });
 
-	// Infobulle
-	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-  	tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
-
+    // Infobulles Bootstrap
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
 })

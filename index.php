@@ -24,7 +24,6 @@
 		<a href="#about" id="about_button" data-bs-toggle="tooltip" title="Á propos"><i class="fas fa-user-tie"></i></a>
 		<a href="#resume" id="resume_button" data-bs-toggle="tooltip" title="CV"><i class="fas fa-address-book"></i></a>
 		<a href="#portfolio" id="portfolio_button" data-bs-toggle="tooltip" title="Portfolio"><i class="fas fa-briefcase"></i></a>
-		<a href="#contact" id="contact_button" data-bs-toggle="tooltip" title="Contact"><i class="fas fa-envelope"></i></a>
 	</nav>
 
 
@@ -407,35 +406,26 @@
             </div>
         </section>
 
-        <!------------------------------------- CONTACT -------------------------------------->
-
-        <section id="contact">
-            <div class="header-page">
-                <h2>Contact</h2>
-                <span class="title"></span>
-            </div>
-
-            <article class="container links">
-                <div>
-                    <a href="tel:0611536708"><i class="fas fa-mobile-alt"></i></a>
-                    <p>Téléphone</p>
-                </div>
-                <div>
-                    <a href="mailto:pratlong.estelle@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <p>Email</p>
-                </div>
-                <div>
-                    <a href="https://www.linkedin.com/in/estelle-pratlong-dev5871184" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <p>LinkedIn</p>
-                </div>
-                <div>
-                    <a href="https://github.com/Estelle-Pratlong-Dev?tab=repositories" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <p>GitHub</p>
-                </div>
-            </article>
-        </section>
-
     </main>
+
+    <footer id="footer">
+        <div>
+            <a href="tel:0611536708"><i class="fas fa-mobile-alt"></i></a>
+            <p>Téléphone</p>
+        </div>
+        <div>
+            <a href="mailto:pratlong.estelle@gmail.com"><i class="fas fa-envelope"></i></a>
+            <p>Email</p>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/estelle-pratlong-dev5871184" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <p>LinkedIn</p>
+        </div>
+        <div>
+            <a href="https://github.com/Estelle-Pratlong-Dev?tab=repositories" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <p>GitHub</p>
+        </div>
+    </footer>
 
 	<!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
