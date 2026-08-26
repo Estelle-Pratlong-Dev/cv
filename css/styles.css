@@ -467,11 +467,6 @@ Portfolio
     font-size: 20px;
 }
 
-
-#portfolio {
-    padding-top: clamp(40px, 8vh, 80px);
-}
-
 #portfolio > article:hover {
     transform: none;
 }
@@ -580,7 +575,7 @@ Portfolio
     margin: 0 0 8px 0;
 }
 
-#portfolio .project-name a {
+#portfolio .project-name a, #portfolio h4 {
     color: var(--color-accent);
     text-decoration: none;
 }
