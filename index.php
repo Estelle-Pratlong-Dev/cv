@@ -27,7 +27,7 @@
 	</nav>
 
 
-   <!-------------------------------------- ACCUEIL -------------------------------------->
+    <!-------------------------------------- ACCUEIL -------------------------------------->
     <header>
         <h1>Estelle PRATLONG</h1>
         <div>Développeuse Web full-stack</div>
@@ -347,51 +347,161 @@
                 <h2>Portfolio</h2>
                 <span class="title"></span>
             </div>
-            <div class="container">
-                <div class="row">
-                    <figure class="col-md-3">
-						<a href="https://my-meteo.pratlong-estelle-site.fr/" target="_blank" rel="noopener noreferrer">
-							<img src="img/projects/my_meteo-logo.png" alt="Logo My Météo">
-							<figcaption>
-								<h4>My météo</h4>
-								<p>Adaptation web d'un application météo crée avec Cordova</p>
-							</figcaption>
-						</a>
-                    </figure>
-					<figure class="col-md-3">
-						<a href="https://south-west-store.pratlong-estelle-site.fr/" target="_blank" rel="noopener noreferrer">
-							<img src="img/projects/south_west_store-logo.png" alt="Logo South West Store">
-							<figcaption>
-								<h4>South-West-Store</h4>
-								<p>Site e-commerce de sneakers de collection</p>
-							</figcaption>
-						</a>
-					</figure>
-                    <figure class="col-md-3 vic">
-                        <img src="img/projects/vic_capital-logo.png" alt="Logo Vic Capital">
-                        <figcaption>
-                            <h4>Vic Capital</h4>
-                            <p>Site vitrine d'une entreprise de consultant patrimonial </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="col-md-3">
-						<a href="http://CV-web.pratlong-estelle-site.fr" target="_blank" rel="noopener noreferrer">
-							<img src="img/cv-fav.jpg" alt="Logo CV">
-							<figcaption>
-								<h4>CV web</h4>
-								<p>Mon premier CV</p>
-							</figcaption>
-						</a>
-                    </figure>
-                    <figure class="col-md-3">
-                        <img src="img/projects/fairgrounds-logo.png" alt="Logo Fairgrounds">
-                        <figcaption>
-                            <h4>Fairgrounds Animations</h4>
-                            <p>Site vitrine d'une entreprise de location d'attractions <br>(Bientôt disponible...) </p>
-                        </figcaption>
-                    </figure>
+            <article class="container">
+                <div class="row g-4">
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
+                            <div class="project-preview"><img src="img/projects/south-west-store.png" alt="Aperçu South-West-Store"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Site e-commerce</span>
+                                        <span class="project-status">Poursuivi personnellement</span>
+                                    </div>
+                                    <h4 class="project-name"><a href="https://south-west-store.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">South-West-Store</a></h4>
+                                    <p class="project-desc">Site e-commerce de sneakers développé sous Symfony, initié en formation puis enrichi personnellement : catalogue, recherche et filtres, comptes clients, commandes et back-office.</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>Symfony</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://south-west-store.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/South-West-Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
+                            <div class="project-preview"><img src="img/projects/mini-erp.png" alt="Aperçu Mini ERP"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Logiciel de gestion</span>
+                                        <span class="project-status">En cours</span>
+                                    </div>
+                                    <h4 class="project-name"><a href="https://mini-erp.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Mini ERP</a></h4>
+                                    <p class="project-desc">ERP modulaire pour petites entreprises : contacts, catalogue, projets, devis, factures et stocks. Modules activables par client, gestion des rôles et permissions (RBAC).</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>Symfony 8</span><span>Doctrine</span><span>MySQL</span><span>API Platform</span><span>EasyAdmin</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://mini-erp.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/mini_erp" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
+                            <div class="project-preview"><img src="img/projects/manalex-fleur.png" alt="Aperçu Manalex Fleurs"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Site vitrine</span>
+                                        <span class="project-status">En cours</span>
+                                    </div>
+                                    <h4 class="project-name"><a href="#" rel="noopener noreferrer">Manalex Fleurs</a></h4>
+                                    <p class="project-desc">Site pour un flower truck : présentation du concept, planning des marchés et galerie de créations alimentée dynamiquement en PHP.</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" rel="noopener noreferrer">Bientôt en ligne</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/flower-truck-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
+                            <div class="project-preview"><img src="img/projects/mairie-website.png" alt="Aperçu Mairie de Gagnières"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Site institutionnel</span>
+                                        <span class="project-status">En cours</span>
+                                    </div>
+                                    <h4 class="project-name"><a href="#" rel="noopener noreferrer">Mairie de Gagnières</a></h4>
+                                    <p class="project-desc">Refonte du site municipal : contenus réorganisés dans une interface moderne et responsive, avec une attention portée à l'accessibilité et un système d'annonces à expiration automatique.</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>HTML</span><span>CSS</span><span>Vanilla JS</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" rel="noopener noreferrer">Bientôt en ligne</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/mairie-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
+                            <div class="project-preview"><img src="img/projects/ptites-mains.png" alt="Aperçu Les Ptites Mains d'Estelle"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Site vitrine</span>
+                                        <span class="project-status">Prototype</span>
+                                    </div>
+                                    <h4 class="project-name"><a href="#" rel="noopener noreferrer">Les Ptites Mains d'Estelle</a></h4>
+                                    <p class="project-desc">Prototype d'un projet d'activité multiservices de proximité : présentation des prestations, organisation de l'offre et adaptation mobile.</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" rel="noopener noreferrer">Bientôt en ligne</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/ptite-mains-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
+                            <div class="project-preview"><img src="img/projects/my-meteo.png" alt="Aperçu My Météo"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Application web</span>
+                                        <span class="project-status">Projet de formation</span>
+                                    </div>
+                                    <h4 class="project-name"><a href="https://my-meteo.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">My Météo</a></h4>
+                                    <p class="project-desc">Adaptation web d'une app météo Cordova : consultation via API REST et affichage dynamique des données côté client.</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>AJAX</span><span>API REST</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://my-meteo.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/my-meteo-Cordova" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+            </article>
         </section>
 
     </main>
@@ -414,6 +524,20 @@
             <p>GitHub</p>
         </div>
     </footer>
+
+    <!-- Modale aperçu projet -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-2 pt-0">
+                    <img id="previewModalImg" src="" alt="" class="w-100 rounded">
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

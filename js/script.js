@@ -40,6 +40,16 @@ $(document).ready(function () {
         showSection($("#portfolio"), 'portfolio_button');
     });
 
+    // Modale aperçu projet
+    document.querySelectorAll('#portfolio .project-preview img').forEach(function (img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function () {
+            document.getElementById('previewModalImg').src = this.src;
+            document.getElementById('previewModalImg').alt = this.alt;
+            new bootstrap.Modal(document.getElementById('previewModal')).show();
+        });
+    });
+
     // Infobulles Bootstrap
     document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 

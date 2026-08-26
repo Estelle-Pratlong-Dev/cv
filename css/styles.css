@@ -279,6 +279,7 @@ A propos
 /***************** Centre d'interet ***************/
 #about .interest div {
     border-radius: 10px;
+    position: relative;
 }
 
 #about .interest p {
@@ -288,6 +289,26 @@ A propos
 
 #about .interest p i {
     font-size: 20px;
+}
+
+#about .interest [data-bs-toggle="tooltip"] p {
+    position: relative;
+}
+
+#about .interest [data-bs-toggle="tooltip"] p::after {
+    content: 'ℹ';
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 11px;
+    color: var(--color-accent);
+    opacity: 0.35;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+#about .interest [data-bs-toggle="tooltip"]:hover p::after {
+    opacity: 1;
 }
 
 
@@ -433,66 +454,192 @@ CV
 Portfolio
 ***************************************************************/
 
+#portfolio .projects div {
+    border-radius: 10px;
+}
+
+#portfolio .projects .project {
+    padding: 15px;
+    background: var(--color-bg);
+}
+
+#portfolio .projects p i {
+    font-size: 20px;
+}
+
+
 #portfolio {
-    padding-top: clamp(60px, 15vh, 160px);
+    padding-top: clamp(40px, 8vh, 80px);
 }
 
-#portfolio div.row {
-    justify-content: center;
+#portfolio > article:hover {
+    transform: none;
 }
 
-#portfolio figure {
-    margin: 20px;
-    background: var(--color-text);
-    border-radius: 10px;
+#portfolio .project {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-#portfolio figure img {
-    max-width: 200px;
-    transition: 0.6s;
-}
-
-#portfolio figcaption {
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    right: 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: none;
+    width: 100%;
+    background: var(--color-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: left;
 }
 
-#portfolio a {
-    color: var(--color-text) !important;
+#portfolio .project:hover {
+    transform: translateY(-5px);
 }
 
-#portfolio figure:hover figcaption {
+/* Aperçu 16:9 */
+#portfolio .project-preview {
+    aspect-ratio: 16 / 9;
+    background: var(--color-bg-dark);
     display: flex;
-    background: rgba(0, 161, 225, 0.8);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
 }
 
-#portfolio figure:hover img {
-    transform: scale(1.05);
+#portfolio .project-preview span {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    opacity: 0.5;
 }
 
-#portfolio .vic {
-    background: #3CC8EB;
+#portfolio .project-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: 0.3s;
+    display: block;
 }
 
-#portfolio .vic img {
-    transform: scale(.5);
+#portfolio .project-preview::after {
+    content: '🔍 Agrandir';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--color-text);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
 }
 
-#portfolio .vic:hover img {
-    transform: scale(.55);
+#portfolio .project-preview:hover::after {
+    opacity: 1;
+}
+
+#portfolio .project:hover .project-preview img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* Corps */
+#portfolio .project-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+}
+
+#portfolio .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+#portfolio .project-type {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#portfolio .project-status {
+    font-size: 10px;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    padding: 1px 7px;
+    opacity: 0.75;
+}
+
+#portfolio .project-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+
+#portfolio .project-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+#portfolio .project-name a:hover {
+    text-decoration: underline;
+}
+
+#portfolio .project-desc {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Pied de carte */
+#portfolio .project-footer {
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+#portfolio .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+#portfolio .project-tags span {
+    font-size: 11px;
+    padding: 2px 8px;
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    color: var(--color-accent);
+    opacity: 0.8;
+}
+
+#portfolio .project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+#portfolio .project-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+#portfolio .project-links a:first-child {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+#portfolio .project-links a:hover {
+    color: var(--color-text);
 }
 
 /***************************************************************
@@ -507,7 +654,8 @@ Footer
     right: 0;
     background: rgba(0, 0, 0, 0.9);
     padding: 10px 0;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
     align-items: center;
     z-index: 1;
 }
