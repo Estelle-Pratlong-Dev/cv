@@ -359,7 +359,7 @@
                                         <span class="project-type">Site e-commerce</span>
                                         <span class="project-status">Poursuivi personnellement</span>
                                     </div>
-                                    <h4 class="project-name"><a href="https://south-west-store.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">South-West-Store</a></h4>
+                                    <h4 class="project-name">South-West-Store</h4>
                                     <p class="project-desc">Site e-commerce de sneakers développé sous Symfony, initié en formation puis enrichi personnellement : catalogue, recherche et filtres, comptes clients, commandes et back-office.</p>
                                 </div>
                                 <div class="project-footer">
@@ -384,7 +384,7 @@
                                         <span class="project-type">Logiciel de gestion</span>
                                         <span class="project-status">En cours</span>
                                     </div>
-                                    <h4 class="project-name"><a href="https://mini-erp.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Mini ERP</a></h4>
+                                    <h4 class="project-name">Mini ERP</h4>
                                     <p class="project-desc">ERP modulaire pour petites entreprises : contacts, catalogue, projets, devis, factures et stocks. Modules activables par client, gestion des rôles et permissions (RBAC).</p>
                                 </div>
                                 <div class="project-footer">
@@ -409,7 +409,7 @@
                                         <span class="project-type">Site vitrine</span>
                                         <span class="project-status">En cours</span>
                                     </div>
-                                    <h4 class="project-name"><a href="#" rel="noopener noreferrer">Manalex Fleurs</a></h4>
+                                    <h4 class="project-name">Manalex Fleurs</h4>
                                     <p class="project-desc">Site pour un flower truck : présentation du concept, planning des marchés et galerie de créations alimentée dynamiquement en PHP.</p>
                                 </div>
                                 <div class="project-footer">
@@ -417,7 +417,7 @@
                                         <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="#" rel="noopener noreferrer">Bientôt en ligne</a>
+                                        <a href="https://manalex-fleurs.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/flower-truck-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
@@ -434,7 +434,7 @@
                                         <span class="project-type">Site institutionnel</span>
                                         <span class="project-status">En cours</span>
                                     </div>
-                                    <h4 class="project-name"><a href="#" rel="noopener noreferrer">Mairie de Gagnières</a></h4>
+                                    <h4 class="project-name">Mairie de Gagnières</h4>
                                     <p class="project-desc">Refonte du site municipal : contenus réorganisés dans une interface moderne et responsive, avec une attention portée à l'accessibilité et un système d'annonces à expiration automatique.</p>
                                 </div>
                                 <div class="project-footer">
@@ -442,7 +442,7 @@
                                         <span>HTML</span><span>CSS</span><span>Vanilla JS</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="#" rel="noopener noreferrer">Bientôt en ligne</a>
+                                        <a href="https://mairie-gagnieres.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/mairie-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
@@ -459,7 +459,7 @@
                                         <span class="project-type">Site vitrine</span>
                                         <span class="project-status">Prototype</span>
                                     </div>
-                                    <h4 class="project-name"><a href="#" rel="noopener noreferrer">Les Ptites Mains d'Estelle</a></h4>
+                                    <h4 class="project-name">Les Ptites Mains d'Estelle</h4>
                                     <p class="project-desc">Prototype d'un projet d'activité multiservices de proximité : présentation des prestations, organisation de l'offre et adaptation mobile.</p>
                                 </div>
                                 <div class="project-footer">
@@ -467,7 +467,7 @@
                                         <span>HTML</span><span>CSS</span><span>JavaScript</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="#" rel="noopener noreferrer">Bientôt en ligne</a>
+                                        <a href="https://ptites-mains.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/ptite-mains-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
@@ -484,7 +484,7 @@
                                         <span class="project-type">Application web</span>
                                         <span class="project-status">Projet de formation</span>
                                     </div>
-                                    <h4 class="project-name"><a href="https://my-meteo.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">My Météo</a></h4>
+                                    <h4 class="project-name">My Météo</h4>
                                     <p class="project-desc">Adaptation web d'une app météo Cordova : consultation via API REST et affichage dynamique des données côté client.</p>
                                 </div>
                                 <div class="project-footer">
@@ -492,7 +492,7 @@
                                         <span>HTML</span><span>CSS</span><span>JavaScript</span><span>AJAX</span><span>API REST</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="https://my-meteo.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <a href="https://my-meteo.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/my-meteo-Cordova" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
