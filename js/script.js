@@ -48,10 +48,8 @@ $(document).ready(function () {
             document.getElementById('previewModalImg').src = this.src;
             document.getElementById('previewModalImg').alt = this.alt;
             document.getElementById('previewModalImg').style.display = '';
-            var video = document.getElementById('previewModalVideo');
-            video.pause();
-            video.src = '';
-            video.style.display = 'none';
+            document.getElementById('previewModalIframe').src = '';
+            document.getElementById('previewModalVideoWrap').style.display = 'none';
             new bootstrap.Modal(modal).show();
         });
     });
