@@ -367,7 +367,7 @@
                                         <span>Symfony</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="https://south-west-store.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <button class="open-video-modal" data-video="https://www.youtube.com/embed/oRmfMqgVgf0">Voir la démo ▶</button>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/South-West-Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
@@ -392,7 +392,8 @@
                                         <span>Symfony 8</span><span>Doctrine</span><span>MySQL</span><span>API Platform</span><span>EasyAdmin</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="https://mini-erp.pratlong-estelle.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <!-- <a href="#" target="_blank" rel="noopener noreferrer"> Voir la démo ▶</a> -->
+										<p style="color:#00A3E1;">Démo à venir</p>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/mini_erp" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
@@ -534,6 +535,9 @@
                 </div>
                 <div class="modal-body p-2 pt-0">
                     <img id="previewModalImg" src="" alt="" class="w-100 rounded">
+                    <div class="ratio ratio-16x9" id="previewModalVideoWrap" style="display:none;">
+                        <iframe id="previewModalIframe" src="" title="Démo" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
                 </div>
             </div>
         </div>

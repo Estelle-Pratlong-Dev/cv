@@ -40,14 +40,37 @@ $(document).ready(function () {
         showSection($("#portfolio"), 'portfolio_button');
     });
 
-    // Modale aperçu projet
+    // Modale aperçu projet (image)
     document.querySelectorAll('#portfolio .project-preview img').forEach(function (img) {
         img.style.cursor = 'zoom-in';
         img.addEventListener('click', function () {
+            var modal = document.getElementById('previewModal');
             document.getElementById('previewModalImg').src = this.src;
             document.getElementById('previewModalImg').alt = this.alt;
+            document.getElementById('previewModalImg').style.display = '';
+            var video = document.getElementById('previewModalVideo');
+            video.pause();
+            video.src = '';
+            video.style.display = 'none';
+            new bootstrap.Modal(modal).show();
+        });
+    });
+
+    // Modale vidéo YouTube
+    document.querySelectorAll('.open-video-modal').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.getElementById('previewModalImg').style.display = 'none';
+            document.getElementById('previewModalIframe').src = this.dataset.video;
+            document.getElementById('previewModalVideoWrap').style.display = '';
             new bootstrap.Modal(document.getElementById('previewModal')).show();
         });
+    });
+
+    // Stopper la vidéo à la fermeture de la modale
+    document.getElementById('previewModal').addEventListener('hidden.bs.modal', function () {
+        document.getElementById('previewModalIframe').src = '';
+        document.getElementById('previewModalVideoWrap').style.display = 'none';
+        document.getElementById('previewModalImg').style.display = '';
     });
 
     // Infobulles Bootstrap
