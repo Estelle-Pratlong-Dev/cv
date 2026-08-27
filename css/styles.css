@@ -513,7 +513,7 @@ Portfolio
 }
 
 #portfolio .project-preview::after {
-    content: '🔍 Agrandir';
+    content: '\1F50D\00A0 Agrandir';
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
