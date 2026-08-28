@@ -55,7 +55,7 @@ Selon les projets, le portfolio permet d'accéder à une démonstration en ligne
 
 ## Démonstration
 
-🌐 **[Voir mon CV / Portfolio en ligne](https://estelle.praltong.fr)**
+🌐 **[Voir mon CV / Portfolio en ligne](https://estelle-praltong.fr)**
 
 ## À propos
 
