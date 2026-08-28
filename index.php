@@ -33,8 +33,6 @@
         <div>Développeuse Web full-stack</div>
     </header>
 
-
-
     <main>
 
         <!------------------------------------ A PROPOS ------------------------------------>
@@ -443,7 +441,8 @@
                                         <span>HTML</span><span>CSS</span><span>Vanilla JS</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="https://mairie-gagnieres.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <!-- <a href="https://mairie-gagnieres.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a> -->
+										<p style="color:#00A3E1;">Bientôt disponible</p>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/mairie-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                                     </div>
                                 </div>
