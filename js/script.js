@@ -41,37 +41,31 @@ $(document).ready(function () {
     });
 
     // Modale aperçu projet (image)
-    document.querySelectorAll('#portfolio .project-preview img').forEach(function (img) {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function () {
-            var modal = document.getElementById('previewModal');
-            document.getElementById('previewModalImg').src = this.src;
-            document.getElementById('previewModalImg').alt = this.alt;
-            document.getElementById('previewModalImg').style.display = '';
-            document.getElementById('previewModalIframe').src = '';
-            document.getElementById('previewModalVideoWrap').style.display = 'none';
-            new bootstrap.Modal(modal).show();
-        });
+    $('#portfolio .project-preview img').css('cursor', 'zoom-in').on('click', function () {
+        $('#previewModalImg').attr({ src: $(this).attr('src'), alt: $(this).attr('alt') }).show();
+        $('#previewModalIframe').attr('src', '');
+        $('#previewModalVideoWrap').hide();
+        new bootstrap.Modal($('#previewModal')[0]).show();
     });
 
     // Modale vidéo YouTube
-    document.querySelectorAll('.open-video-modal').forEach(function (link) {
-        link.addEventListener('click', function () {
-            document.getElementById('previewModalImg').style.display = 'none';
-            document.getElementById('previewModalIframe').src = this.dataset.video;
-            document.getElementById('previewModalVideoWrap').style.display = '';
-            new bootstrap.Modal(document.getElementById('previewModal')).show();
-        });
+    $('.open-video-modal').on('click', function () {
+        $('#previewModalImg').hide();
+        $('#previewModalIframe').attr('src', $(this).data('video'));
+        $('#previewModalVideoWrap').show();
+        new bootstrap.Modal($('#previewModal')[0]).show();
     });
 
     // Stopper la vidéo à la fermeture de la modale
-    document.getElementById('previewModal').addEventListener('hidden.bs.modal', function () {
-        document.getElementById('previewModalIframe').src = '';
-        document.getElementById('previewModalVideoWrap').style.display = 'none';
-        document.getElementById('previewModalImg').style.display = '';
+    $('#previewModal').on('hidden.bs.modal', function () {
+        $('#previewModalIframe').attr('src', '');
+        $('#previewModalVideoWrap').hide();
+        $('#previewModalImg').show();
     });
 
     // Infobulles Bootstrap
-    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    $('[data-bs-toggle="tooltip"]').each(function () {
+        new bootstrap.Tooltip(this);
+    });
 
 })
