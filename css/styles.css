@@ -56,8 +56,8 @@ p {
 
 .header-page:before,
 .header-page:after,
-h3:before,
-h3:after,
+.subtitle h3:before,
+.subtitle h3:after,
 #resume .item:before,
 #resume .item:after,
 #resume .item:hover h4:before,
@@ -136,7 +136,7 @@ Décoration sous-titres
     border: 3px solid var(--color-accent);
 }
 
-h3:before {
+.subtitle h3:before {
     content: '';
     position: absolute;
     width: 30px;
@@ -145,7 +145,7 @@ h3:before {
     bottom: -10px;
 }
 
-h3:after {
+.subtitle h3:after {
     content: '';
     position: absolute;
     width: 30px;
@@ -242,7 +242,7 @@ header h1 {
     z-index: 0;
 }
 
-header div {
+header .tagline {
     font-size: 20px;
     font-weight: bold;
     z-index: 0;
@@ -251,7 +251,7 @@ header div {
 /***************************************************************
 A propos
 ***************************************************************/
-#about h4 {
+#about .me h3 {
     font-size: 20px;
     font-weight: bold;
     margin: 20px 0;
@@ -575,7 +575,7 @@ Portfolio
     margin: 0 0 8px 0;
 }
 
-#portfolio .project-name a, #portfolio h4 {
+#portfolio .project-name a, #portfolio h3 {
     color: var(--color-accent);
     text-decoration: none;
 }
@@ -699,7 +699,7 @@ MEDIA QUERIES
         font-size: 70px;
     }
 
-    header div {
+    header .tagline {
         font-size: 30px;
     }
 
