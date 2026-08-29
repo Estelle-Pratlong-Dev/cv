@@ -402,6 +402,31 @@
 
                     <div class="col-md-4 d-flex">
                         <div class="project">
+                            <div class="project-preview"><img src="img/projects/mcvitres.png" alt="Aperçu MC-Vitres"></div>
+                            <div class="project-body">
+                                <div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Site vitrine</span>
+                                        <span class="project-status">Projet professionnel</span>
+                                    </div>
+                                    <h3 class="project-name">MC-Vitres</h3>
+                                    <p class="project-desc">Site vitrine pour une entreprise de nettoyage, conçu avec une interface moderne et responsive pour présenter clairement ses prestations et sa zone d'intervention.</p>
+                                </div>
+                                <div class="project-footer">
+                                    <div class="project-tags">
+                                        <span>HTML</span><span>CSS</span><span>jQuery</span><span>Bootstrap</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://estelle-pratlong-dev.github.io/mc-vitres-v2/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <a href="https://github.com/Estelle-Pratlong-Dev/mc-vitres-v2" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project">
                             <div class="project-preview"><img src="img/projects/manalex-fleur.png" alt="Aperçu Manalex Fleurs"></div>
                             <div class="project-body">
                                 <div>
@@ -419,32 +444,6 @@
                                     <div class="project-links">
                                         <a href="https://manalex-fleurs.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/flower-truck-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 d-flex">
-                        <div class="project">
-                            <div class="project-preview"><img src="img/projects/mairie-website.png" alt="Aperçu Mairie de Gagnières"></div>
-                            <div class="project-body">
-                                <div>
-                                    <div class="project-meta">
-                                        <span class="project-type">Site institutionnel</span>
-                                        <span class="project-status">En cours</span>
-                                    </div>
-                                    <h3 class="project-name">Mairie de Gagnières</h3>
-                                    <p class="project-desc">Refonte du site municipal : contenus réorganisés dans une interface moderne et responsive, avec une attention portée à l'accessibilité et un système d'annonces à expiration automatique.</p>
-                                </div>
-                                <div class="project-footer">
-                                    <div class="project-tags">
-                                        <span>HTML</span><span>CSS</span><span>Vanilla JS</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <!-- <a href="https://mairie-gagnieres.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a> -->
-                                        <p style="color:#00A3E1;">Bientôt disponible</p>
-                                        <a href="https://github.com/Estelle-Pratlong-Dev/mairie-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
                                     </div>
                                 </div>
                             </div>

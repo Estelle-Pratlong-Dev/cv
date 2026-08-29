@@ -486,6 +486,11 @@ Portfolio
     transform: translateY(-5px);
 }
 
+#portfolio .row > .col-md-4:nth-child(-n+3) .project-desc {
+    display: block;
+    overflow: visible;
+}
+
 /* Aperçu 16:9 */
 #portfolio .project-preview {
     aspect-ratio: 16 / 9;
