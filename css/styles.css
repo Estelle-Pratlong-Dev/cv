@@ -730,4 +730,23 @@ Réglages Firefox
     }
 }
 
+/***************************************************************
+Lien mentions légales
+***************************************************************/
+
+.legal-link {
+    position: fixed;
+    right: 15px;
+    bottom: 5px;
+    z-index: 2;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    opacity: 0.6;
+}
+
+.legal-link:hover {
+    color: var(--color-accent);
+    opacity: 1;
+}
+
 

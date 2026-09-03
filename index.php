@@ -525,6 +525,8 @@
         </div>
     </footer>
 
+    <a href="mentions-legales.php" class="legal-link">Mentions légales</a>
+
     <!-- Modale aperçu projet -->
     <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
