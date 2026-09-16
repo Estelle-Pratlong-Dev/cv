@@ -9,8 +9,8 @@ Options -Indexes
     # Empêche le navigateur de deviner le type MIME
     Header always set X-Content-Type-Options "nosniff"
 
-    # Active la protection XSS du navigateur
-    Header always set X-XSS-Protection "1; mode=block"
+    # (X-XSS-Protection retiré : obsolète, plus aucun navigateur récent ne
+    # l'utilise — la CSP ci-dessous est la vraie protection contre les XSS)
 
     # Ne transmet pas le referrer vers d'autres domaines
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
