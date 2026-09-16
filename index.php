@@ -432,7 +432,7 @@
                                 <div>
                                     <div class="project-meta">
                                         <span class="project-type">Site vitrine</span>
-                                        <span class="project-status">En cours</span>
+                                        <span class="project-status">En ligne</span>
                                     </div>
                                     <h3 class="project-name">Manalex Fleurs</h3>
                                     <p class="project-desc">Site pour un flower truck : présentation du concept, planning des marchés et galerie de créations alimentée dynamiquement en PHP.</p>
@@ -442,7 +442,7 @@
                                         <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
                                     </div>
                                     <div class="project-links">
-                                        <a href="https://manalex-fleurs.estelle-pratlong.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                                        <a href="https://manalex-flowerstruck.fr/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
                                         <a href="https://github.com/Estelle-Pratlong-Dev/flower-truck-website" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
                                     </div>
                                 </div>
